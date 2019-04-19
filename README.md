@@ -108,9 +108,6 @@ yaw_controller.py - line 45 - dampen steering value. This could help when the ca
   * https://medium.com/@anthony_sarkis/self-driving-cars-implementing-real-time-traffic-light-detection-and-classification-in-2017-7d9ae8df1c58
   * https://machinelearningmastery.com/transfer-learning-for-deep-learning/
   * https://github.com/alex-lechner/Traffic-Light-Classification
-  * https://github.com/iburris/CarND-Capstone
-  * https://github.com/ksmith6/sdc-capstone
-
 
 
 
