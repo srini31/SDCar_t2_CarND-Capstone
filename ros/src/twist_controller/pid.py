@@ -1,3 +1,4 @@
+import rospy
 
 MIN_NUM = float('-inf')
 MAX_NUM = float('inf')
@@ -8,9 +9,8 @@ class PID(object):
         self.kp = kp
         self.ki = ki
         self.kd = kd
-        self.min = mn
-        self.max = mx
-
+        self.min = mn #0.
+        self.max = mx #0.2
         self.int_val = self.last_error = 0.
 
     def reset(self):
@@ -23,12 +23,15 @@ class PID(object):
 
         val = self.kp * error + self.ki * integral + self.kd * derivative;
 
-        if val > self.max:
+        if val > self.max:   
             val = self.max
-        elif val < self.min:
+        elif val < self.min: #set to min throttle (0) if vehicle is going very slow
             val = self.min
         else:
             self.int_val = integral
         self.last_error = error
 
+        #rospy.logwarn("pid Throttle: {0}".format(val))
+        #rospy.logwarn("pid Velocity error: {0}".format(error))
+        
         return val

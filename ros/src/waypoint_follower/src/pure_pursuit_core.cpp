@@ -229,6 +229,7 @@ bool PurePursuit::interpolateNextTarget(int next_waypoint, geometry_msgs::Point 
   }
 }
 
+//displacement_threshold_(0.2), relative_angle_threshold_(5.)
 bool PurePursuit::verifyFollowing() const
 {
   double a = 0;
@@ -238,6 +239,7 @@ bool PurePursuit::verifyFollowing() const
   double displacement = getDistanceBetweenLineAndPoint(current_pose_.pose.position, a, b, c);
   double relative_angle = getRelativeAngle(current_waypoints_.getWaypointPose(1), current_pose_.pose);
   //ROS_ERROR("side diff : %lf , angle diff : %lf",displacement,relative_angle);
+  /*
   if (displacement < displacement_threshold_ && relative_angle < relative_angle_threshold_)
   {
     // ROS_INFO("Following : True");
@@ -247,8 +249,11 @@ bool PurePursuit::verifyFollowing() const
   {
     // ROS_INFO("Following : False");
     return false;
-  }
+  } */ //causes too much wooble and car moves slow
+  ROS_INFO("Following : False");
+  return false; // so that it updates the steering all the time and make vehicle stay in lane
 }
+
 geometry_msgs::Twist PurePursuit::calcTwist(double curvature, double cmd_velocity) const
 {
   // verify whether vehicle is following the path
