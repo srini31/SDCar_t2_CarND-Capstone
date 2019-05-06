@@ -35,7 +35,7 @@ that we have created in the `__init__` function.
 
 '''
 
-DBW_RATE = 15 #50 Hz for submission
+DBW_RATE = 50 #15 #50 Hz for submission
 
 class DBWNode(object):
     def __init__(self):

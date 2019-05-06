@@ -25,9 +25,9 @@ as well as to verify your TL classifier.
 TODO (for Yousuf and Aaron): Stopline location for each traffic light.
 '''
 #200 waypoints - going fast and out of control
-LOOKAHEAD_WPS = 50 #200 # Number of waypoints we will publish. You can change this number
+LOOKAHEAD_WPS = 100 #50 #200 # Number of waypoints we will publish. You can change this number
 MAX_DECEL = 1.0
-WAYPOINT_RATE = 20 #15 ok# 10 #50 Hz for submission
+WAYPOINT_RATE = 40 #20 #15 ok# 10 #50 Hz for submission
 
 #after step 1 open the simulator and see the points path
 class WaypointUpdater(object):

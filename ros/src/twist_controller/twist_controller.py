@@ -6,7 +6,7 @@ from lowpass import LowPassFilter
 
 GAS_DENSITY = 2.858
 ONE_MPH = 0.44704
-MAX_SPEED = 30.0 # was 40.0
+MAX_SPEED = 40.0 #30.0 # was 40.0
 
 #called in dbw_node.py at 50 hz
 class Controller(object):
